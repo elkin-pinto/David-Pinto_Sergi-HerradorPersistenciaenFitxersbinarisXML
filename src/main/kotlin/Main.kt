@@ -2,7 +2,12 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import nl.adaptivity.xmlutil.serialization.XML
 import java.io.*
+import kotlin.io.path.Path
+import kotlin.io.path.readText
+import kotlin.io.path.writeText
+
 
 @Serializable
 data class Restaurant(
@@ -37,7 +42,7 @@ fun exercici2(){
     val llista: MutableList<Restaurant> = mutableListOf()
 
     jsonString.forEach { jsonLine ->
-        val restaurant = Json.decodeFromString<Restaurant>(jsonLine) // Lo deserializamos a restaurant
+        val restaurant = Json.decodeFromString<Restaurant>(jsonLine) // Lo deserializamos a restaurant o directamente el string de cada linea
         llista.add(restaurant) // añadimos a la lista de restaurants aquest objecte
     }
 
@@ -54,6 +59,16 @@ fun exercici2(){
     println(restoredRestaurants)
 }
 
-fun main() {
+fun exercici3() {
+    // Leer el archivo restaurants.dat
+    val fileInput = ObjectInputStream(FileInputStream("restaurants.dat"))
+    val restoredRestaurants = fileInput.readObject() as Restaurant
+    fileInput.close()
 
+    println(restoredRestaurants)
+}
+
+fun main() {
+    exercici2()
+    // exercici3()
 }
