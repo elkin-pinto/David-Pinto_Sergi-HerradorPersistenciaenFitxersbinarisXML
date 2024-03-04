@@ -102,6 +102,90 @@ fun exercici3() {
     val xmlString = XML.encodeToString(restaurants)
     File("restaurants.xml").writeText(xmlString)
 }
+fun exercici4(){
+    // Path el archivo XML
+    val xmlFile = File("restaurants.xml")
+
+    // Leer archivo XML y decode
+    val lineasXML = xmlFile.readLines()
+
+    // Pasamos cada linea de XML
+    for (linea in lineasXML) {
+        val objecte : Restaurant = XML.decodeFromString(linea)
+
+        // Print del nombre de cada restaurante
+        println(objecte.name)
+    }
+}
+
+fun exercici5() {
+    // Creamos tres nuevos restaurantes
+    val restaurantesNuevos = listOf(
+        Restaurant(
+            address = Address(
+                building = "123",
+                coord = listOf(40.712776, -74.005974),
+                street = "Example Street 1",
+                zipcode = "10001"
+            ),
+            borough = "Manhattan",
+            cuisine = "Italian",
+            grades = listOf(
+                Grade(date = "2022-01-01", mark = "A", score = 90),
+                Grade(date = "2022-02-01", mark = "B", score = 80),
+                Grade(date = "2022-03-01", mark = "C", score = 70)
+            ),
+            name = "Example Restaurant 1",
+            restaurant_id = "123456"
+        ),
+        Restaurant(
+            address = Address(
+                building = "456",
+                coord = listOf(40.7143528, -74.0059731),
+                street = "Example Street 2",
+                zipcode = "10002"
+            ),
+            borough = "Brooklyn",
+            cuisine = "Mexican",
+            grades = listOf(
+                Grade(date = "2022-01-01", mark = "A", score = 95),
+                Grade(date = "2022-02-01", mark = "A", score = 85),
+                Grade(date = "2022-03-01", mark = "B", score = 75)
+            ),
+            name = "Example Restaurant 2",
+            restaurant_id = "456789"
+        ),
+        Restaurant(
+            address = Address(
+                building = "789",
+                coord = listOf(40.71354, -73.98574),
+                street = "Example Street 3",
+                zipcode = "10003"
+            ),
+            borough = "Queens",
+            cuisine = "Chinese",
+            grades = listOf(
+                Grade(date = "2022-01-01", mark = "B", score = 85),
+                Grade(date = "2022-02-01", mark = "B", score = 75),
+                Grade(date = "2022-03-01", mark = "C", score = 65)
+            ),
+            name = "Example Restaurant 3",
+            restaurant_id = "789012"
+        )
+    ).forEach(
+
+    )
+    // Path del archivo restaurantes.XML
+    val xmlFile = File("rastaurants.xml")
+    // Pasamos cada objeto restaurante
+    for (objecte in restaurantesNuevos) {
+        // Serialitzar cada objetos Restaurante a XML
+        val lineaXML = XML.encodeToString(restaurantesNuevos) + "\n"
+        // Escribir a restaurantes.XML
+        xmlFile.writeText(lineaXML)
+    }
+}
+
 
 fun main() {
     // exercici2()
