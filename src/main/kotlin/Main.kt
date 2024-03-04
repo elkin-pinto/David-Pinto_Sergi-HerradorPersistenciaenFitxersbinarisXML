@@ -24,7 +24,7 @@ data class Address(
     val building: String,
     val coord: List<Double>,
     val street: String,
-    val zipcode: String
+    var zipcode: String
 ) : java.io.Serializable
 
 @Serializable
@@ -98,9 +98,10 @@ fun exercici3() {
     } finally {
         fileInput.close()
     }
-
-    val xmlString = XML.encodeToString(restaurants)
-    File("restaurants.xml").writeText(xmlString)
+    restaurants.forEach {
+        val xmlString = XML.encodeToString(it) + "\n"
+        File("restaurants.xml").appendText(xmlString)
+    }
 }
 fun exercici4(){
     // Path el archivo XML
@@ -119,6 +120,10 @@ fun exercici4(){
 }
 
 fun exercici5() {
+
+    // Path del archivo restaurantes.XML
+    val xmlFile = File("restaurants.xml")
+
     // Creamos tres nuevos restaurantes
     val restaurantesNuevos = listOf(
         Restaurant(
@@ -172,22 +177,26 @@ fun exercici5() {
             name = "Example Restaurant 3",
             restaurant_id = "789012"
         )
-    ).forEach(
-
-    )
-    // Path del archivo restaurantes.XML
-    val xmlFile = File("rastaurants.xml")
-    // Pasamos cada objeto restaurante
-    for (objecte in restaurantesNuevos) {
+    ).forEach {
         // Serialitzar cada objetos Restaurante a XML
-        val lineaXML = XML.encodeToString(restaurantesNuevos) + "\n"
+        val lineaXML = XML.encodeToString(it) + "\n"
         // Escribir a restaurantes.XML
-        xmlFile.writeText(lineaXML)
+        xmlFile.appendText(lineaXML)
     }
 }
 
+fun exercici6() {
+    // Leer el archivo JSON
+    val xmlLines = File("rastaurants.xml").readLines()
+    var xmlString = ""
+   xmlLines.forEach {
+       val linea:Restaurant = XML.decodeFromString(it)
+       if (linea.restaurant_id == "30075445") linea.address.zipcode = "10470"
+       xmlString += linea.toString()
+   }
+}
 
 fun main() {
     // exercici2()
-    exercici3()
+    exercici5()
 }
