@@ -1,12 +1,8 @@
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import nl.adaptivity.xmlutil.serialization.XML
 import java.io.*
-import kotlin.io.path.Path
-import kotlin.io.path.readText
-import kotlin.io.path.writeText
+
 
 
 @Serializable
@@ -105,10 +101,10 @@ fun exercici3() {
 }
 fun exercici4(){
     // Path el archivo XML
-    val xmlFile = File("restaurants.xml")
+    val fileInput = File("restaurants.xml")
 
     // Leer archivo XML y decode
-    val lineasXML = xmlFile.readLines()
+    val lineasXML = fileInput.readLines()
 
     // Pasamos cada linea de XML
     for (linea in lineasXML) {
@@ -122,10 +118,10 @@ fun exercici4(){
 fun exercici5() {
 
     // Path del archivo restaurantes.XML
-    val xmlFile = File("restaurants.xml")
+    val fileInput = File("restaurants.xml")
 
     // Creamos tres nuevos restaurantes
-    val restaurantesNuevos = listOf(
+    listOf(
         Restaurant(
             address = Address(
                 building = "123",
@@ -181,22 +177,27 @@ fun exercici5() {
         // Serialitzar cada objetos Restaurante a XML
         val lineaXML = XML.encodeToString(it) + "\n"
         // Escribir a restaurantes.XML
-        xmlFile.appendText(lineaXML)
+        fileInput.appendText(lineaXML)
     }
 }
 
 fun exercici6() {
     // Leer el archivo JSON
-    val xmlLines = File("rastaurants.xml").readLines()
-    var xmlString = ""
+    val fileInput = File("restaurants.xml")
+    val xmlLines = fileInput.readLines()
+    val xmlString:MutableList<Restaurant> = mutableListOf()
    xmlLines.forEach {
        val linea:Restaurant = XML.decodeFromString(it)
        if (linea.restaurant_id == "30075445") linea.address.zipcode = "10470"
-       xmlString += linea.toString()
+       xmlString.add(linea)
    }
+    fileInput.writeText("")
+    for (linea in xmlString) {
+        fileInput.appendText(XML.encodeToString(linea) + "\n")
+    }
 }
 
 fun main() {
     // exercici2()
-    exercici5()
+    exercici6()
 }
