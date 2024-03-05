@@ -1,0 +1,68 @@
+<Restaurant borough="Bronx" cuisine="Bakery" name="Morris Park Bake Shop" restaurant_id="30075445">
+    <Address building="1007" street="Morris Park Ave" zipcode="10470">
+        <coord>-73.856077</coord>
+        <coord>40.848447</coord>
+    </Address>
+    <Grade date="1990-05-01" mark="A" score="2"/>
+    <Grade date="1989-05-02" mark="A" score="6"/>
+    <Grade date="1988-05-02" mark="A" score="10"/>
+    <Grade date="1987-05-02" mark="A" score="9"/>
+    <Grade date="1986-05-02" mark="B" score="14"/>
+</Restaurant>
+<Restaurant borough="Brooklyn" cuisine="Hamburgers" name="Wendy'S" restaurant_id="30112340">
+<Address building="469" street="Flatbush Avenue" zipcode="11225">
+    <coord>-73.961704</coord>
+    <coord>40.662942</coord>
+</Address>
+<Grade date="1990-05-01" mark="A" score="8"/>
+<Grade date="1989-05-01" mark="B" score="23"/>
+<Grade date="1987-05-01" mark="A" score="12"/>
+<Grade date="1986-05-01" mark="A" score="12"/>
+</Restaurant>
+<Restaurant borough="Manhattan" cuisine="Irish" name="Dj Reynolds Pub And Restaurant" restaurant_id="30191841">
+<Address building="351" street="West   57 Street" zipcode="10019">
+    <coord>-73.98513559999999</coord>
+    <coord>40.7676919</coord>
+</Address>
+<Grade date="1990-05-01" mark="A" score="2"/>
+<Grade date="1989-05-01" mark="A" score="11"/>
+<Grade date="1988-05-01" mark="A" score="12"/>
+<Grade date="1986-05-01" mark="A" score="12"/>
+</Restaurant>
+<Restaurant borough="Brooklyn" cuisine="American " name="Riviera Caterer" restaurant_id="40356018">
+<Address building="2780" street="Stillwell Avenue" zipcode="11224">
+    <coord>-73.98241999999999</coord>
+    <coord>40.579505</coord>
+</Address>
+<Grade date="1990-05-01" mark="A" score="5"/>
+<Grade date="1989-05-01" mark="A" score="7"/>
+<Grade date="1988-05-01" mark="A" score="12"/>
+<Grade date="1987-05-01" mark="A" score="12"/>
+</Restaurant>
+<Restaurant borough="Manhattan" cuisine="Italian" name="Example Restaurant 1" restaurant_id="123456">
+<Address building="123" street="Example Street 1" zipcode="10001">
+    <coord>40.712776</coord>
+    <coord>-74.005974</coord>
+</Address>
+<Grade date="2022-01-01" mark="A" score="90"/>
+<Grade date="2022-02-01" mark="B" score="80"/>
+<Grade date="2022-03-01" mark="C" score="70"/>
+</Restaurant>
+<Restaurant borough="Brooklyn" cuisine="Mexican" name="Example Restaurant 2" restaurant_id="456789">
+<Address building="456" street="Example Street 2" zipcode="10002">
+    <coord>40.7143528</coord>
+    <coord>-74.0059731</coord>
+</Address>
+<Grade date="2022-01-01" mark="A" score="95"/>
+<Grade date="2022-02-01" mark="A" score="85"/>
+<Grade date="2022-03-01" mark="B" score="75"/>
+</Restaurant>
+<Restaurant borough="Queens" cuisine="Chinese" name="Example Restaurant 3" restaurant_id="789012">
+<Address building="789" street="Example Street 3" zipcode="10003">
+    <coord>40.71354</coord>
+    <coord>-73.98574</coord>
+</Address>
+<Grade date="2022-01-01" mark="B" score="85"/>
+<Grade date="2022-02-01" mark="B" score="75"/>
+<Grade date="2022-03-01" mark="C" score="65"/>
+</Restaurant>

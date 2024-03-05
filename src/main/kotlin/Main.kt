@@ -59,15 +59,14 @@ fun exercici2() {
     val restoredRestaurants = mutableListOf<Restaurant>()
 
     // Leer y almacenar cada objeto en la lista
-    var continuar = true
 
     try {
-        while (continuar) {
+        while (true) {
             val restaurant = fileInput.readObject() as Restaurant
             restoredRestaurants.add(restaurant)
         }
     } catch (eof: EOFException) {
-        continuar = false // Establecer continuar en false cuando se alcanza el final del archivo
+        // Establecer continuar en false cuando se alcanza el final del archivo
     } finally {
         fileInput.close() // Cerrar el flujo de entrada
     }
@@ -81,7 +80,7 @@ fun exercici3() {
 
     val restaurants = mutableListOf<Restaurant>()
 
-    var continuar = true
+    val continuar = true
     try {
         while (continuar) {
             val obj = fileInput.readObject()
@@ -90,7 +89,7 @@ fun exercici3() {
             }
         }
     } catch (eof: EOFException) {
-       continuar = false // Se alcanzó el final del archivo
+        // Se alcanzó el final del archivo
     } finally {
         fileInput.close()
     }
@@ -198,6 +197,9 @@ fun exercici6() {
 }
 
 fun main() {
-    // exercici2()
+    exercici2()
+    exercici3()
+    exercici4()
+    exercici5()
     exercici6()
 }
